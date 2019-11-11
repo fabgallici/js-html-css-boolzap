@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background-color:pink;
-  font-size: 18px;
+  background-color:#fff;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
 }
 
 .bor {
@@ -24,7 +25,7 @@ body {
 
 .aside-left .my-user-menu,
 .right-wrapper .contact-menu,
-.right-wrapper .input-panel {
+.right-wrapper .input-container {
   height: 100px;
 
   border: 1px solid black;
@@ -47,12 +48,12 @@ body {
 }
 .aside-left .user-panel {
   height: 100px;
-  background-color: green;
+  /* background-color: green; */
 
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #EEEEEE;
 }
 .aside-left .user-panel.is-active {
-  background-color: lightskyblue;
+  background-color: #E9EBEB;
 }
 /* ----------------------------------------- */
 /*            RIGHT SIDE                  */
@@ -66,6 +67,8 @@ body {
 }
 .right-wrapper .chat-container {
   height: calc(100vh - 200px);
+  background-image: url('../img/chat-bg.png');
+  background-size: contain;
 }
 .right-wrapper .chat-panel {
   display: none;
