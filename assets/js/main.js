@@ -11,8 +11,14 @@ function sendMsg() {
 }
 
 $(document).ready(function () {
-
+  //send msg on button click
   $('.send-msg').click(sendMsg);
+  //send msg press Enter
+  $(document).keypress(function (e) {
+    if(e.keyCode === 13) {
+      sendMsg();
+    }
+  });
 
   //User panel listener
   $('.user-panel').click(function() {
