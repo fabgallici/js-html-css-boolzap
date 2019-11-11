@@ -1,3 +1,6 @@
+
+
+
 function sendMsg() {
   var $message = $('.chat-msg').val();
 
