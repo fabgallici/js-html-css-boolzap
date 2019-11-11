@@ -21,7 +21,7 @@ function sendMsg() {
 
 function receivedMsg() {
   if (!emptyMsg) {
-    var $message = 'ciao';
+    var $message = 'ok';
     var $elementMsg = $('#template .received-msg').clone();
     $elementMsg.find('.sent-text').text($message);
     $('.chat-panel.is-active').append($elementMsg);
@@ -56,9 +56,14 @@ $(document).ready(function () {
     //select data-name corresponding chat to active
     $currentDataName = $(this).attr('data-name');
     console.log($currentDataName);
+    //attivo la chat corrispondente all'user-panel selezionato
     $('.chat-panel').removeClass('is-active');
-  
+    
     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
+
+    //aggiorno current user nel contact menu
+    var $currentUser = $(this).html();
+    $('.contact-menu-container .current-user').html($currentUser);
 
   })
 

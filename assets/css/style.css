@@ -24,7 +24,7 @@ body {
 }
 
 .aside-left .my-user-menu,
-.right-wrapper .contact-menu,
+.right-wrapper .contact-menu-container,
 .right-wrapper .input-container {
   height: 100px;
 
