@@ -4,11 +4,15 @@
   box-sizing: border-box;
 }
 body {
-  background-color:lightgreen;
+  background-color:pink;
 }
 
 .bor {
   border: 1px solid black;
+}
+/* Parte di templating */
+#template {
+  display: none;
 }
 /* ----------------------------------------- */
 /*            PAGE SETUP                   */
