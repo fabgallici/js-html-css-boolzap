@@ -17,7 +17,7 @@ body {
 /* ----------------------------------------- */
 .page-wrapper {
   display: flex;
-  /* height: 100vh; */
+  height: 100vh;
   white-space: nowrap;
   /* flex-flow: row wrap; */  
 }
@@ -61,11 +61,11 @@ body {
   /* flex-basis: 75%; */
   flex-grow: 4;
   
-  border: 1px solid black;
+  /* border: 1px solid black; CAUSAVA VERT SCROLL! */
   /* height: 300px; */
 }
 .right-wrapper .chat-container {
-  height: calc(100vh - 200px);;
+  height: calc(100vh - 200px);
 }
 .right-wrapper .chat-panel {
   display: none;
@@ -79,30 +79,35 @@ body {
 #template {
   display: none;
 }
-.msg-style { 
+.msg-style-1 { 
   display: flex;
   justify-content: flex-end;
 }
 .msg-container {
   position: relative;
 }
-.msg-style .sent-text {
+.sent-text {
   margin: 5px;
-  padding: 10px 40px 10px 20px;
+  padding: 7px 40px 7px 20px;
   background-color: lightgreen;
   border-radius: 8px;
 }
-.msg-style .msg-time {
+.msg-time {
   position: absolute;
   bottom: 12px;
   right: 12px;
   font-size: 0.7rem;
 }
-/* .msg-style { 
-  text-align: right;
+
+/* Received Message */
+.msg-style-2 { 
+  display: flex;
+  justify-content: flex-start;
 }
-.msg-style .sent-text {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: lightgreen;
+.msg-style-2 .sent-text {
+  background-color: #fff;
+
+}
+/* * {
+  border: 0 !important; 
 } */

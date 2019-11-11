@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="page-wrapper">
-  
+ 
       <!-- Aside Left user panel LEFT SIDE -->
       <aside class="aside-left">
         <!-- LEFT SIDE my user top menu -->
@@ -51,20 +51,22 @@
 
           <!-- RIGHT SIDE Main user chat -->
         <main>
-          <div class="contact-chat">
-            <!-- Current Chat -->
-            <div class="chat-container">
-              <div class="chat-panel is-active" data-name="Marco">
+          <!-- Current Chat -->
+          <div class="chat-container">
+            <div class="chat-panel is-active" data-name="Marco">
 
-              </div>
-              <div class="chat-panel" data-name="Paolo">
+            </div>
+            <div class="chat-panel" data-name="Paolo">
 
-              </div>
-              <div class="chat-panel" data-name="Luca">
+            </div>
+            <div class="chat-panel" data-name="Luca">
 
-              </div>
-            </div>        
-            <!-- Botton Input Panel -->
+            </div>
+          </div>    
+        </main>  
+        
+        <footer>
+          <!-- Botton Input Panel -->
             <div class="input-panel">
               <div class="input-icon">
 
@@ -76,14 +78,21 @@
                 <button class="send-msg">Send Chat</button>
               </div>
             </div>
-          </div>
-        </main>
+        </footer>                  
+        
       </div>
     </div>
 
     <!-- blocco template non visibile in pagina -->
     <div id="template">
-      <div class='sent-msg msg-style'>
+      <div class='sent-msg msg-style-1'>
+        <div class="msg-container">
+          <div class="sent-text"></div>
+          <span class="msg-time">10:10</span>
+        </div>     
+      </div>
+
+      <div class='received-msg msg-style-2'>
         <div class="msg-container">
           <div class="sent-text"></div>
           <span class="msg-time">10:10</span>
