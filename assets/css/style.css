@@ -3,3 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: red;
+}
+
+.bor {
+  border: 1px solid black;
+}
+/* ----------------------------------------- */
+/*            PAGE SETUP                   */
+/* ----------------------------------------- */
+.page-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+}
+.aside-left {
+  flex-basis: 25%;
+
+  border: 1px solid black;
+  /* height: 300px; */
+}
+.main-wrapper {
+  flex-basis: 75%;
+  
+  border: 1px solid black;
+  /* height: 300px; */
+}
+
+/* .page-wrapper .aside-left {
+  
+  height: calc(100vh - 100px);
+  background-color: #000;
+} */
