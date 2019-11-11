@@ -1,24 +1,33 @@
 
 
+var emptyMsg = true;
 
 function sendMsg() {
   var $message = $('.chat-msg').val();
+  if ($message !== "") {
+    var $elementMsg = $('#template .sent-msg').clone();
 
-  var $elementMsg = $('#template .sent-msg').clone();
+    $elementMsg.find('.sent-text').text($message);
 
-  $elementMsg.find('.sent-text').text($message);
+    $('.chat-panel.is-active').append($elementMsg);
 
-  $('.chat-panel.is-active').append($elementMsg);
-
-  $('.chat-msg').val('');
+    $('.chat-msg').val('');
+    emptyMsg = false;
+  } else {
+    emptyMsg = true;
+  }
+  
 }
 
 function receivedMsg() {
-  var $message = 'ciao';
-  var $elementMsg = $('#template .received-msg').clone();
-  $elementMsg.find('.sent-text').text($message);
-  $('.chat-panel.is-active').append($elementMsg);
-  $('.chat-msg').val('');
+  if (!emptyMsg) {
+    var $message = 'ciao';
+    var $elementMsg = $('#template .received-msg').clone();
+    $elementMsg.find('.sent-text').text($message);
+    $('.chat-panel.is-active').append($elementMsg);
+    $('.chat-msg').val('');
+  }
+  
 }
 
 $(document).ready(function () {
