@@ -23,7 +23,7 @@ $(document).ready(function () {
     console.log($currentDataName);
     $('.chat-panel').removeClass('is-active');
     // $('.chat-panel').attr("data-name='" + $currentDataName + "'").addClass(is-active);
-    $(".chat-panel[data-name=' + $currentDataName + ']").addClass('is-active');
+    $('.chat-panel[data-name=" + $currentDataName + "]').addClass('is-active');
     // var $currentChat = $('.chat-panel').attr('data-name', $currentDataName);
     // console.log($currentChat);
     // if ($('.chat-panel').attr('data-name', $currentDataName)) {
