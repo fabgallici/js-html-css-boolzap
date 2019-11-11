@@ -5,15 +5,13 @@
 }
 body {
   background-color:pink;
+  font-size: 18px;
 }
 
 .bor {
   border: 1px solid black;
 }
-/* Parte di templating */
-#template {
-  display: none;
-}
+
 /* ----------------------------------------- */
 /*            PAGE SETUP                   */
 /* ----------------------------------------- */
@@ -61,3 +59,37 @@ body {
 .right-wrapper .current-chat {
   height: calc(100vh - 200px);;
 }
+
+/* ----------------------------------------- */
+/*            TEMPLATING                  */
+/* ----------------------------------------- */
+#template {
+  display: none;
+}
+.msg-style { 
+  display: flex;
+  justify-content: flex-end;
+}
+.msg-container {
+  position: relative;
+}
+.msg-style .sent-text {
+  margin: 5px;
+  padding: 10px 40px 10px 20px;
+  background-color: lightgreen;
+  border-radius: 8px;
+}
+.msg-style .msg-time {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.7rem;
+}
+/* .msg-style { 
+  text-align: right;
+}
+.msg-style .sent-text {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightgreen;
+} */
