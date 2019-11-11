@@ -8,8 +8,15 @@ $(document).ready(function () {
 
     $elementMsg.find('.sent-text').text($message);
 
-    $('.current-chat').append($elementMsg);
+    $('.chat-panel').append($elementMsg);
 
     $('.chat-msg').val('');
   })
+
+  //User panel listener
+  $('.user-panel').click(function() {
+    $('.user-panel').removeClass('is-active');
+    $(this).addClass('is-active');
+  })
+
 });

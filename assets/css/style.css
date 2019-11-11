@@ -45,7 +45,15 @@ body {
   border: 1px solid black;
   /* height: 300px; */
 }
+.aside-left .user-panel {
+  height: 100px;
+  background-color: green;
 
+  border-bottom: 2px solid #fff;
+}
+.aside-left .user-panel.is-active {
+  background-color: lightskyblue;
+}
 /* ----------------------------------------- */
 /*            RIGHT SIDE                  */
 /* ----------------------------------------- */
@@ -56,7 +64,7 @@ body {
   border: 1px solid black;
   /* height: 300px; */
 }
-.right-wrapper .current-chat {
+.right-wrapper .chat-container {
   height: calc(100vh - 200px);;
 }
 
