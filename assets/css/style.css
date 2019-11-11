@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  
+  background-color:lightgreen;
 }
 
 .bor {
@@ -15,24 +15,45 @@ body {
 /* ----------------------------------------- */
 .page-wrapper {
   display: flex;
-  flex-flow: row wrap;
   height: 100vh;
-}
-.aside-left {
-  flex-basis: 25%;
-
-  border: 1px solid black;
-  /* height: 300px; */
-}
-.main-wrapper {
-  flex-basis: 75%;
-  
-  border: 1px solid black;
-  /* height: 300px; */
+  white-space: nowrap;
+  /* flex-flow: row wrap; */  
 }
 
+.aside-left .my-user-menu,
+.right-wrapper .contact-menu,
+.right-wrapper .input-panel {
+  height: 100px;
+
+  border: 1px solid black;
+}
 /* .page-wrapper .aside-left {
   
   height: calc(100vh - 100px);
   background-color: #000;
 } */
+/* ----------------------------------------- */
+/*            LEFT SIDE                   */
+/* ----------------------------------------- */
+.aside-left {
+  /* flex-basis: 25%; */
+  flex-grow: 1;
+  
+
+  border: 1px solid black;
+  /* height: 300px; */
+}
+
+/* ----------------------------------------- */
+/*            RIGHT SIDE                  */
+/* ----------------------------------------- */
+.right-wrapper {
+  /* flex-basis: 75%; */
+  flex-grow: 4;
+  
+  border: 1px solid black;
+  /* height: 300px; */
+}
+.right-wrapper .current-chat {
+  height: calc(100vh - 200px);;
+}
