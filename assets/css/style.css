@@ -67,7 +67,12 @@ body {
 .right-wrapper .chat-container {
   height: calc(100vh - 200px);;
 }
-
+.right-wrapper .chat-panel {
+  display: none;
+}
+.right-wrapper .chat-panel.is-active {
+  display: block;
+}
 /* ----------------------------------------- */
 /*            TEMPLATING                  */
 /* ----------------------------------------- */
