@@ -17,91 +17,96 @@
   </head>
   <body>
     <div class="page-wrapper">
- 
       <!-- Aside Left user panel LEFT SIDE -->
       <aside class="aside-left">
         <!-- LEFT SIDE my user top menu -->
-        <div class="my-user-menu">
-          MY USER MENU
-          <img src="assets/img/icon-webwhatsapp(1).svg" alt="">
+        <div class="user-menu-container">
+          <div class="menu-left">
+            <a href="#"><img src="assets/img/icon-webwhatsapp.svg" alt="user_icon"/></a>
+          </div>
+          <ul class="menu-right">
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(1).svg" alt="status_icon"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(2).svg" alt="new_chat"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(3).svg" alt="dot_menu"/></a>
+            </li>
+          </ul>
         </div>
         <!-- LEFT SIDE user panel -->
         <div class="user-container">
-            USER PANEL
+          USER PANEL
           <div class="user-panel is-active" data-name="Marco">
-              Marco
+            Marco
           </div>
           <div class="user-panel" data-name="Paolo">
-              Paolo
+            Paolo
           </div>
           <div class="user-panel" data-name="Luca">
-              Luca
+            Luca
           </div>
         </div>
       </aside>
 
       <!-- Main wrapper RIGHT SIDE-->
       <div class="right-wrapper">
-        
         <!-- RIGHT SIDE contact top menu  -->
         <header>
           <div class="contact-menu-container">
             CONTACT MENU
-            <div class="current-user">
-
-            </div>
+            <div class="current-user"></div>
           </div>
         </header>
 
-          <!-- RIGHT SIDE Main user chat -->
+        <!-- RIGHT SIDE Main user chat -->
         <main>
           <!-- Current Chat -->
           <div class="chat-container">
-            <div class="chat-panel is-active" data-name="Marco">
+            <div class="chat-panel is-active" data-name="Marco"></div>
+            <div class="chat-panel" data-name="Paolo"></div>
+            <div class="chat-panel" data-name="Luca"></div>
+          </div>
+        </main>
 
-            </div>
-            <div class="chat-panel" data-name="Paolo">
-
-            </div>
-            <div class="chat-panel" data-name="Luca">
-
-            </div>
-          </div>    
-        </main>  
-        
         <footer>
           <!-- Botton Input Panel -->
-            <div class="input-container">
-              <div class="input-icon">
-                <i class="far fa-smile"></i>
-              </div>
-              <div class="input-panel">
-                <input type="text" class="chat-msg" placeholder="Scrivi un messaggio">
-              </div>
-              <div class="input-button">
-                <i class="fas fa-paper-plane send-msg"></i>
-                <!-- <button class="send-msg">Send Chat</button> -->
-              </div>
+          <div class="input-container">
+            <div class="input-icon">
+              <i class="far fa-smile"></i>
             </div>
-        </footer>                  
-        
+            <div class="input-panel">
+              <input
+                type="text"
+                class="chat-msg"
+                placeholder="Scrivi un messaggio"
+              />
+            </div>
+            <div class="input-button">
+              <i class="fas fa-paper-plane send-msg"></i>
+              <!-- <button class="send-msg">Send Chat</button> -->
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
 
     <!-- blocco template non visibile in pagina -->
     <div id="template">
-      <div class='sent-msg msg-style-1'>
+      <div class="sent-msg msg-style-1">
         <div class="msg-container">
           <div class="sent-text"></div>
           <span class="msg-time">10:10</span>
-        </div>     
+        </div>
       </div>
 
-      <div class='received-msg msg-style-2'>
+      <div class="received-msg msg-style-2">
         <div class="msg-container">
           <div class="sent-text"></div>
           <span class="msg-time">10:10</span>
-        </div>     
+        </div>
       </div>
     </div>
 

@@ -8,6 +8,10 @@ body {
   font-size: 16px;
   font-family: 'Lato', sans-serif;
 }
+li {
+  display: inline-block;
+  list-style-type: none;
+}
 
 .bor {
   border: 1px solid black;
@@ -23,10 +27,10 @@ body {
   /* flex-flow: row wrap; */  
 }
 
-.aside-left .my-user-menu,
+.aside-left .user-menu-container,
 .right-wrapper .contact-menu-container,
 .right-wrapper .input-container {
-  height: 100px;
+  height: 60px;
 
   border: 1px solid black;
 }
@@ -45,6 +49,15 @@ body {
 
   border: 1px solid black;
   /* height: 300px; */
+}
+/* Left menu */
+.user-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-left img {
+  height: 40px;
+  width: auto;
 }
 .aside-left .user-panel {
   height: 100px;
@@ -66,7 +79,7 @@ body {
   /* height: 300px; */
 }
 .right-wrapper .chat-container {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 120px);
   background-image: url('../img/chat-bg.png');
   background-size: contain;
 }
