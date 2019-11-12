@@ -76,10 +76,15 @@ li {
   align-items: center;
   background-color: #fff;
   padding: 5px 10px;
+  border-radius: 999px;
+}
+.user-search-panel img {
+  vertical-align: middle;
 }
 .user-search-panel .search-user {
   height: 30px;
   padding: 10px 15px;
+  flex-grow: 1;
 }
 /* ----------------------------------------- */
 /*           COMMON L R SIDES RULES              */
