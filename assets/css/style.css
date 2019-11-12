@@ -189,7 +189,7 @@ textarea:focus, input:focus{
 }
 .sent-text {
   margin: 5px;
-  padding: 7px 40px 7px 20px;
+  padding: 7px 50px 7px 20px;
   background-color: lightgreen;
   border-radius: 8px;
 }
@@ -198,6 +198,7 @@ textarea:focus, input:focus{
   bottom: 12px;
   right: 12px;
   font-size: 0.7rem;
+  color: #98AA89;
 }
 
 /* Received Message */
