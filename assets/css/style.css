@@ -39,6 +39,8 @@ li {
   height: calc(100vh - 100px);
   background-color: #000;
 } */
+
+
 /* ----------------------------------------- */
 /*            LEFT SIDE                   */
 /* ----------------------------------------- */
@@ -47,11 +49,28 @@ li {
   flex-grow: 1;
   
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* height: 300px; */
 }
-/* Left menu */
-.user-menu-container {
+.aside-left .user-container {
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+.aside-left .user-panel {
+  height: 100px;
+  /* background-color: green; */
+
+  border-bottom: 1px solid #EEEEEE;
+}
+.aside-left .user-panel.is-active {
+  background-color: #E9EBEB;
+}
+
+/* ----------------------------------------- */
+/*           COMMON L R SIDES RULES              */
+/* ----------------------------------------- */
+.user-menu-container,
+.contact-menu-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,15 +83,6 @@ li {
 }
 .menu-right li {
   margin-left: 20px;
-}
-.aside-left .user-panel {
-  height: 100px;
-  /* background-color: green; */
-
-  border-bottom: 1px solid #EEEEEE;
-}
-.aside-left .user-panel.is-active {
-  background-color: #E9EBEB;
 }
 /* ----------------------------------------- */
 /*            RIGHT SIDE                  */
@@ -88,6 +98,7 @@ li {
   height: calc(100vh - 120px);
   background-image: url('../img/chat-bg.png');
   background-size: contain;
+  overflow-y: auto;
 }
 .right-wrapper .chat-panel {
   display: none;
