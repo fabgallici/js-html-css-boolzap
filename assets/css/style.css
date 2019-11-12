@@ -30,7 +30,7 @@ li {
 .aside-left .user-menu-container,
 .right-wrapper .contact-menu-container,
 .right-wrapper .input-container {
-  height: 60px;
+  height: 75px;
 
   border: 1px solid black;
 }
@@ -54,30 +54,11 @@ li {
   height: calc(100vh - 60px);
   overflow-y: auto;
 }
-/*-------- User Panel --------- */
-.user-panel {
-  height: 72px;
-  /* background-color: green; */
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #EEEEEE;
-}
-.user-panel .profile-img img {
-  height: 50px;
+.user-menu-container .menu-left img {
+  height: 40px;
   width: auto;
-  margin: 0 10px;
 }
-.user-panel .contact-last-msg {
-  display: flex;
-  align-items: flex-end;
-  font-size: 0.8rem;
-}
-.user-panel .contact-last-msg img {
-  margin-right: 5px;
-}
-.aside-left .user-panel.is-active {
-  background-color: #E9EBEB;
-}
+
 /*------- user search section -------*/
 .user-search-container {
   background-color: #F8F8F8;
@@ -110,10 +91,7 @@ li {
   padding: 0 15px;
   background-color: #EEEEEE;
 }
-.menu-left img {
-  height: 40px;
-  width: auto;
-}
+
 .menu-right li {
   margin-left: 20px;
 }
@@ -130,6 +108,35 @@ textarea:focus, input:focus{
   border-radius: 999px;
   color: #4A4A4A;
 }
+
+/*-------- User Panel & Current User --------- */
+.user-panel-container .current-user,
+.user-panel-container .user-panel {
+  height: 72px;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+.user-panel-container .current-user .profile-img img,
+.user-panel-container .user-panel .profile-img img {
+  height: 50px;
+  width: auto;
+  margin: 0 10px;
+}
+.user-panel-container .current-user .contact-last-msg,
+.user-panel-container .user-panel .contact-last-msg {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.8rem;
+}
+.user-panel-container .current-user .contact-last-msg img,
+.user-panel-container .user-panel .contact-last-msg img {
+  margin-right: 5px;
+}
+.aside-left .user-panel-container .user-panel.is-active {
+  background-color: #E9EBEB;
+}
 /* ----------------------------------------- */
 /*            RIGHT SIDE                  */
 /* ----------------------------------------- */
@@ -141,7 +148,7 @@ textarea:focus, input:focus{
   /* height: 300px; */
 }
 .right-wrapper .chat-container {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 150px);
   background-image: url('../img/chat-bg.png');
   background-size: contain;
   overflow-y: auto;
