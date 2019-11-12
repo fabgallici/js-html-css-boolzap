@@ -65,7 +65,22 @@ li {
 .aside-left .user-panel.is-active {
   background-color: #E9EBEB;
 }
-
+/* user search section */
+.user-search-container {
+  background-color: #F8F8F8;
+  padding: 5px 10px;
+}
+.user-search-container .user-search-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 10px;
+}
+.user-search-panel .search-user {
+  height: 30px;
+  padding: 10px 15px;
+}
 /* ----------------------------------------- */
 /*           COMMON L R SIDES RULES              */
 /* ----------------------------------------- */
@@ -83,6 +98,19 @@ li {
 }
 .menu-right li {
   margin-left: 20px;
+}
+
+input::placeholder {
+  color: #A0A0A0;
+}
+/* remove focus border */
+textarea:focus, input:focus{
+    outline: none;
+}
+.input-common {
+  border-color: transparent;
+  border-radius: 999px;
+  color: #4A4A4A;
 }
 /* ----------------------------------------- */
 /*            RIGHT SIDE                  */
@@ -124,9 +152,7 @@ li {
   width: 100%;
   height: 42px;
   padding: 10px 15px;
-  border-color: transparent;
-  border-radius: 999px;
-  color: #4A4A4A;
+
 }
 .input-container i {
   color: #949A9C;
@@ -139,13 +165,7 @@ li {
 .input-container .send-msg:hover {
   cursor: pointer;
 }
-input::placeholder {
-  color: #A0A0A0;
-}
-/* remove focus border */
-textarea:focus, input:focus{
-    outline: none;
-}
+
 /* ----------------------------------------- */
 /*            TEMPLATING                  */
 /* ----------------------------------------- */
