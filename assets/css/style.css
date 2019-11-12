@@ -13,9 +13,6 @@ li {
   list-style-type: none;
 }
 
-.bor {
-  border: 1px solid black;
-}
 
 /* ----------------------------------------- */
 /*            PAGE SETUP                   */
@@ -24,34 +21,25 @@ li {
   display: flex;
   height: 100vh;
   white-space: nowrap;
-  /* flex-flow: row wrap; */  
 }
 
 .aside-left .user-menu-container,
 .right-wrapper .contact-menu-container,
 .right-wrapper .input-container {
-  height: 75px;
-
-  border: 1px solid black;
+  height: 70px;
 }
-/* .page-wrapper .aside-left {
-  
-  height: calc(100vh - 100px);
-  background-color: #000;
-} */
-
 
 /* ----------------------------------------- */
 /*            LEFT SIDE                   */
 /* ----------------------------------------- */
+.aside-left .user-menu-container {
+  border-right: 1px solid #DBDBDB;
+}
 .aside-left {
-  /* flex-basis: 25%; */
   flex-grow: 1;
-  /* border: 1px solid black; */
-  /* height: 300px; */
 }
 .aside-left .user-container {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 70px);
   overflow-y: auto;
 }
 .user-menu-container .menu-left img {
@@ -112,8 +100,7 @@ textarea:focus, input:focus{
 /*-------- User Panel & Current User --------- */
 .user-panel-container .current-user,
 .user-panel-container .user-panel {
-  height: 72px;
-  /* background-color: green; */
+  height: 70px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #EEEEEE;
@@ -141,14 +128,10 @@ textarea:focus, input:focus{
 /*            RIGHT SIDE                  */
 /* ----------------------------------------- */
 .right-wrapper {
-  /* flex-basis: 75%; */
   flex-grow: 3;
-  
-  /* border: 1px solid black; CAUSAVA VERT SCROLL! */
-  /* height: 300px; */
 }
 .right-wrapper .chat-container {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 140px);
   background-image: url('../img/chat-bg.png');
   background-size: contain;
   overflow-y: auto;
@@ -224,8 +207,4 @@ textarea:focus, input:focus{
 }
 .msg-style-2 .sent-text {
   background-color: #fff;
-
 }
-/* * {
-  border: 0 !important; 
-} */
