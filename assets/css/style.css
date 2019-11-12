@@ -54,10 +54,16 @@ li {
 .user-menu-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #EEEEEE;
 }
 .menu-left img {
   height: 40px;
   width: auto;
+}
+.menu-right li {
+  margin-left: 20px;
 }
 .aside-left .user-panel {
   height: 100px;
@@ -73,7 +79,7 @@ li {
 /* ----------------------------------------- */
 .right-wrapper {
   /* flex-basis: 75%; */
-  flex-grow: 4;
+  flex-grow: 3;
   
   /* border: 1px solid black; CAUSAVA VERT SCROLL! */
   /* height: 300px; */
