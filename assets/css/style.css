@@ -55,7 +55,7 @@ li {
   overflow-y: auto;
 }
 /*-------- User Panel --------- */
-.aside-left .user-panel {
+.user-panel {
   height: 72px;
   /* background-color: green; */
   display: flex;
