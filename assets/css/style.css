@@ -42,7 +42,7 @@ li {
   border-right: 1px solid #DBDBDB;
 }
 .aside-left {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 .aside-left .user-container {
   height: calc(95vh - 70px);
