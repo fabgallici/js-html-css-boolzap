@@ -20,14 +20,16 @@ function sendMsg() {
 }
 
 function receivedMsg() {
-  if (!emptyMsg) {
-    var $message = 'ok';
-    var $elementMsg = $('#template .received-msg').clone();
-    $elementMsg.find('.sent-text').text($message);
-    $('.chat-panel.is-active').append($elementMsg);
-    $('.chat-msg').val('');
-  }
-  
+  setTimeout(function() {
+    if (!emptyMsg) {
+      var $message = 'ok';
+      var $elementMsg = $('#template .received-msg').clone();
+      $elementMsg.find('.sent-text').text($message);
+      $('.chat-panel.is-active').append($elementMsg);
+      $('.chat-msg').val('');
+    }
+  }, 1000);
+
 }
 
 $(document).ready(function () {
