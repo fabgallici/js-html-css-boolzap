@@ -69,19 +69,17 @@ $(document).ready(function () {
 
   //search user left panel
   $('.user-search-panel .search-user').on('keyup', function () {
-    console.log($('.user-search-panel .search-user').val());
-    // console.log($(this));
-    // console.log($(this).val());
-    var $searchUserInput = $('.user-search-panel .search-user').val();
+    //salvo l'input corrente in una stringa
+    var $searchUserInput = $(this).val();
     $searchUserInput = $searchUserInput.toLowerCase();
 
-
-    $('.contact-name').each(function (index) {
+    //per ogni Nome Contatto vedo se è inclusa la stringa sopra, 
+    //se non è inclusa nascondo il blocco panel contatto corrispondente o viceversa
+    $('.user-panel-container .contact-name').each(function (index) {
       var $contactName = $(this).text();
       $contactName = $contactName.toLowerCase();
-      console.log($contactName);
+ 
       if (!$contactName.includes($searchUserInput)) {
-        // console.log('found');
         $(this).parents('.user-panel-container').hide();
       } else {
         $(this).parents('.user-panel-container').show();
