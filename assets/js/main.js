@@ -67,4 +67,27 @@ $(document).ready(function () {
 
   })
 
+  //search user left panel
+  $('.user-search-panel .search-user').on('keyup', function () {
+    console.log($('.user-search-panel .search-user').val());
+    // console.log($(this));
+    // console.log($(this).val());
+    var $searchUserInput = $('.user-search-panel .search-user').val();
+    $searchUserInput = $searchUserInput.toLowerCase();
+
+
+    $('.contact-name').each(function (index) {
+      var $contactName = $(this).text();
+      $contactName = $contactName.toLowerCase();
+      console.log($contactName);
+      if (!$contactName.includes($searchUserInput)) {
+        // console.log('found');
+        $(this).parents('.user-panel-container').hide();
+      } else {
+        $(this).parents('.user-panel-container').show();
+      }
+    })
+
+  })
+
 });
