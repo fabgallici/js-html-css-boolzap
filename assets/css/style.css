@@ -193,13 +193,18 @@ textarea:focus, input:focus{
 }
 .msg-container {
   position: relative;
+  max-width: 60%;
 }
 .sent-text {
   margin: 5px;
   padding: 7px 50px 7px 20px;
   background-color: lightgreen;
   border-radius: 8px;
+  white-space: initial; /* fa andare a capo testo senza sforare container */
+  word-break: break-word;
+
 }
+
 .msg-time {
   position: absolute;
   bottom: 12px;
