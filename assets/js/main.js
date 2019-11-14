@@ -91,9 +91,18 @@ $(document).ready(function () {
   })
 
   //delete chat msg
-  $('.chat-panel').on('click', '.sent-msg', function() {
-    console.log('click');
+  // $('.chat-panel').on('click', '.sent-msg', function() {
+  //   console.log('click');
+  //   // $(this).hide();
+  // })
+  $('.chat-panel').on('mouseenter mouseleave', '.sent-msg', function() {
+    $(this).find('.delete-msg-menu').toggle();
     // $(this).hide();
+  })
+
+  $('.chat-panel .delete-msg-menu').on('click', '.delete-msg-dropdown', function() {
+    $(this).find('.delete-msg-dropdown').toggle();
+    console.log('drop');
   })
 
 });

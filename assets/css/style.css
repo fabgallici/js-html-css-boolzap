@@ -193,7 +193,7 @@ textarea:focus, input:focus{
 }
 .msg-container {
   max-width: 60%;
-
+  position: relative;
   margin: 5px;
   padding: 7px 15px 2px 15px;
   background-color: lightgreen;
@@ -219,7 +219,22 @@ textarea:focus, input:focus{
   background-color: #fff;
 }
 
-
+/* delete btn */
+.msg-container .delete-msg-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  z-index: 2;
+}
+.msg-container .delete-msg-dropdown {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 3;
+}
 /*--- Media Query ---*/
 @media screen and (max-width: 1140px) {
   .page-wrapper {
