@@ -244,6 +244,14 @@ textarea:focus, input:focus{
   left: -10px;
   right: auto;
 }
+.msg-container .delete-msg-dropdown a {
+  padding: 10px 2px;
+  border-radius: 4px;
+  color: #000;
+}
+.msg-container .delete-msg-dropdown a:hover {
+  background-color: #EEEEEE;
+}
 /*--- Media Query ---*/
 @media screen and (max-width: 1140px) {
   .page-wrapper {

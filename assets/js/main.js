@@ -90,39 +90,33 @@ $(document).ready(function () {
 
   })
 
-  //delete chat msg
-
-
-  //old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
-  // $('.chat-panel').on('mouseenter mouseleave', '.delete-msg', function () {
-  //   $(this).find('.delete-msg-menu').toggle();
-  //   // $(this).hide();
-  // })
- 
+  //delete chat msg con event Delegation su chat-panel
+  //hide-show arrow-down(delete-msg-menu) when mousenter/leave msg-container + fix del-msg-dropdown
   $('.chat-panel')
-      .on('mouseenter', '.delete-msg', function() {
+      .on('mouseenter', '.msg-container', function() {
         $(this).find('.delete-msg-menu').toggle();
       })
-      .on('mouseleave', '.delete-msg', function () {
+      .on('mouseleave', '.msg-container', function () {
         $(this).find('.delete-msg-menu').toggle();
         $(this).find('.delete-msg-dropdown').hide();
       })
-
-  // $('.chat-panel').on('mouseleave', '.delete-msg', function () {
-  //   $(this).find('.delete-msg-menu').toggle();
-  //   $(this).find('.delete-msg-dropdown').hide();
-  //   // $(this).hide();
-  // })
-
+  //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
   $('.chat-panel').on('click', '.delete-msg-menu', function() {
     $(this).find('.delete-msg-dropdown').toggle();
   })
-
+  //remove entire current msg on click delete-msg link
   $('.chat-panel').on('click', '.delete-msg-dropdown a', function() {
     $(this).closest('.delete-msg').remove();
   })
-
+  //hide delete-msg-dropdown on mouseleave
   $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
     $(this).hide();
   })  
 });
+
+//hide-show arrow-down(delete-msg-menu)
+//old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
+// $('.chat-panel').on('mouseenter mouseleave', '.delete-msg', function () {
+//   $(this).find('.delete-msg-menu').toggle();
+//   // $(this).hide();
+// })
