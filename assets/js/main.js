@@ -50,8 +50,15 @@ $(document).ready(function () {
   })
 
   //send input msg when press Enter , funziona anche con $(document)
-  $('input').keypress(function (e) {
-    if(e.keyCode === 13) {
+  // $('input').keypress(function (e) {
+  //   if(e.keyCode === 13) {
+  //     sendMsg();
+  //     receivedMsg();
+  //   }
+  // });
+
+  $('input').keyup(function (e) {
+    if (e.which === 13) {
       sendMsg();
       receivedMsg();
     }
