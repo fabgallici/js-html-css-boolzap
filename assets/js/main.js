@@ -33,24 +33,26 @@ function receivedMsg() {
 }
 
 //aggiorno current user nel right-wrapper -> menu-left -> current-user
+//con valore user-panel attivo
 function updateCurrentUser() {
-  var $currentUser = $(this).html();
+  var $currentUser = $('.user-panel.is-active').html();
   $('.contact-menu-container .current-user').html($currentUser);
 }
 
 //Init Document Ready
 $(document).ready(function () {
-  //send msg on button click
-  // $('.send-msg').click(sendMsg);
+  
+  //init update current user
+  updateCurrentUser();
+
+  //footer -> input-container -> send-msg icon  send input msg on click
   $('.send-msg').click(function() {
     sendMsg();
     receivedMsg();
   })
 
-
-
-  //send msg press Enter
-  $(document).keypress(function (e) {
+  //send input msg when press Enter , funziona anche con $(document)
+  $('input').keypress(function (e) {
     if(e.keyCode === 13) {
       sendMsg();
       receivedMsg();
@@ -71,8 +73,9 @@ $(document).ready(function () {
     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
 
     //aggiorno current user nel right-wrapper -> menu-left -> current-user
-    var $currentUser = $(this).html();
-    $('.contact-menu-container .current-user').html($currentUser);
+    updateCurrentUser();
+    // var $currentUser = $(this).html();
+    // $('.contact-menu-container .current-user').html($currentUser);
 
   })
 
