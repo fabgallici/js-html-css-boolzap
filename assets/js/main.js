@@ -100,9 +100,13 @@ $(document).ready(function () {
     // $(this).hide();
   })
 
-  $('.chat-panel .delete-msg-menu').on('click', '.delete-msg-dropdown', function() {
+  $('.chat-panel').on('click', '.delete-msg-menu', function() {
     $(this).find('.delete-msg-dropdown').toggle();
-    console.log('drop');
+    console.log($(this));
+  })
+
+  $('.chat-panel').on('click', '.delete-msg-dropdown a', function() {
+    $(this).closest('.sent-msg').remove();
   })
 
 });
