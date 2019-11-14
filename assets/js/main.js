@@ -91,22 +91,38 @@ $(document).ready(function () {
   })
 
   //delete chat msg
-  // $('.chat-panel').on('click', '.sent-msg', function() {
-  //   console.log('click');
+
+
+  //old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
+  // $('.chat-panel').on('mouseenter mouseleave', '.sent-msg', function () {
+  //   $(this).find('.delete-msg-menu').toggle();
   //   // $(this).hide();
   // })
-  $('.chat-panel').on('mouseenter mouseleave', '.sent-msg', function() {
-    $(this).find('.delete-msg-menu').toggle();
-    // $(this).hide();
-  })
+ 
+  $('.chat-panel')
+      .on('mouseenter', '.sent-msg', function() {
+        $(this).find('.delete-msg-menu').toggle();
+      })
+      .on('mouseleave', '.sent-msg', function () {
+        $(this).find('.delete-msg-menu').toggle();
+        $(this).find('.delete-msg-dropdown').hide();
+      })
+
+  // $('.chat-panel').on('mouseleave', '.sent-msg', function () {
+  //   $(this).find('.delete-msg-menu').toggle();
+  //   $(this).find('.delete-msg-dropdown').hide();
+  //   // $(this).hide();
+  // })
 
   $('.chat-panel').on('click', '.delete-msg-menu', function() {
     $(this).find('.delete-msg-dropdown').toggle();
-    console.log($(this));
   })
 
   $('.chat-panel').on('click', '.delete-msg-dropdown a', function() {
     $(this).closest('.sent-msg').remove();
   })
 
+  $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
+    $(this).hide();
+  })  
 });

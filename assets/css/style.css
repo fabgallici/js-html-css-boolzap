@@ -227,12 +227,13 @@ textarea:focus, input:focus{
   top: 0;
   right: 0;
   display: none;
+  padding: 0px 5px;
   z-index: 2;
 }
 .msg-container .delete-msg-dropdown {
   position: absolute;
   display: none;
-  bottom: -60px;
+  top: 15px;
   right: 0;
   background-color: #fff;
   padding: 20px 10px;
