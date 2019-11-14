@@ -238,7 +238,11 @@ textarea:focus, input:focus{
   background-color: #fff;
   padding: 20px 10px;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 99;
+}
+.msg-style-2 .delete-msg-dropdown {
+  left: -10px;
+  right: auto;
 }
 /*--- Media Query ---*/
 @media screen and (max-width: 1140px) {

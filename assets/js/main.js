@@ -94,21 +94,21 @@ $(document).ready(function () {
 
 
   //old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
-  // $('.chat-panel').on('mouseenter mouseleave', '.sent-msg', function () {
+  // $('.chat-panel').on('mouseenter mouseleave', '.delete-msg', function () {
   //   $(this).find('.delete-msg-menu').toggle();
   //   // $(this).hide();
   // })
  
   $('.chat-panel')
-      .on('mouseenter', '.sent-msg', function() {
+      .on('mouseenter', '.delete-msg', function() {
         $(this).find('.delete-msg-menu').toggle();
       })
-      .on('mouseleave', '.sent-msg', function () {
+      .on('mouseleave', '.delete-msg', function () {
         $(this).find('.delete-msg-menu').toggle();
         $(this).find('.delete-msg-dropdown').hide();
       })
 
-  // $('.chat-panel').on('mouseleave', '.sent-msg', function () {
+  // $('.chat-panel').on('mouseleave', '.delete-msg', function () {
   //   $(this).find('.delete-msg-menu').toggle();
   //   $(this).find('.delete-msg-dropdown').hide();
   //   // $(this).hide();
@@ -119,7 +119,7 @@ $(document).ready(function () {
   })
 
   $('.chat-panel').on('click', '.delete-msg-dropdown a', function() {
-    $(this).closest('.sent-msg').remove();
+    $(this).closest('.delete-msg').remove();
   })
 
   $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
