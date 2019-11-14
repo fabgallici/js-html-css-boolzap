@@ -90,4 +90,10 @@ $(document).ready(function () {
 
   })
 
+  //delete chat msg
+  $('.chat-panel').on('click', '.sent-msg', function() {
+    console.log('click');
+    // $(this).hide();
+  })
+
 });

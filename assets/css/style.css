@@ -192,7 +192,6 @@ textarea:focus, input:focus{
   justify-content: flex-end;
 }
 .msg-container {
-  /* position: relative; */
   max-width: 60%;
 
   margin: 5px;
@@ -201,16 +200,11 @@ textarea:focus, input:focus{
   border-radius: 8px;
 }
 .sent-text {
-  
   white-space: initial; /* fa andare a capo testo senza sforare container */
   word-break: break-word;
-
 }
 
 .msg-time {
-  /* position: absolute;
-  bottom: 12px;
-  right: 12px; */
   float: right;
   font-size: 0.7rem;
   color: #98AA89;
