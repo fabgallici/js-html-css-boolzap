@@ -50,37 +50,39 @@ $(document).ready(function () {
   })
 
   //send input msg when press Enter , funziona anche con $(document)
-  // $('input').keypress(function (e) {
-  //   if(e.keyCode === 13) {
-  //     sendMsg();
-  //     receivedMsg();
-  //   }
-  // });
-
-  $('input').keyup(function (e) {
-    if (e.which === 13) {
+  $('input').keypress(function (e) {
+    if(e.keyCode === 13) {
       sendMsg();
       receivedMsg();
     }
   });
 
+  // $('input').keyup(function (e) {
+  //   if (e.which === 13) {
+  //     sendMsg();
+  //     receivedMsg();
+  //   }
+  // });
+
   //left user-panel on click switch current user chat-panel
   $('.user-panel').click(function() {
-    $('.user-panel').removeClass('is-active');
-    $(this).addClass('is-active');
 
-    //select data-name corresponding chat to active
-    $currentDataName = $(this).attr('data-name');
-    console.log($currentDataName);
-    //attivo la chat corrispondente all'user-panel selezionato
-    $('.chat-panel').removeClass('is-active');
-    
-    $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
+    if (!$(this).hasClass('is-active')) {
+      $('.user-panel').removeClass('is-active');
+      $(this).addClass('is-active');
 
-    //aggiorno current user nel right-wrapper -> menu-left -> current-user
-    updateCurrentUser();
-    // var $currentUser = $(this).html();
-    // $('.contact-menu-container .current-user').html($currentUser);
+      //select data-name corresponding chat to active
+      $currentDataName = $(this).attr('data-name');
+      console.log($currentDataName);
+      //attivo la chat corrispondente all'user-panel selezionato
+      $('.chat-panel').removeClass('is-active');
+
+      $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
+
+      //aggiorno current user nel right-wrapper -> menu-left -> current-user
+      updateCurrentUser();
+    }
+
 
   })
 
