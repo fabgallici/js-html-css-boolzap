@@ -221,7 +221,7 @@ textarea:focus, input:focus{
   background-color: #fff;
 }
 
-/* delete btn */
+/*--- delete dropdown section ---*/
 .msg-container .delete-msg-menu {
   position: absolute;
   top: 0;

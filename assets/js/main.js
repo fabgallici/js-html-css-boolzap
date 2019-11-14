@@ -32,6 +32,13 @@ function receivedMsg() {
 
 }
 
+//aggiorno current user nel right-wrapper -> menu-left -> current-user
+function updateCurrentUser() {
+  var $currentUser = $(this).html();
+  $('.contact-menu-container .current-user').html($currentUser);
+}
+
+//Init Document Ready
 $(document).ready(function () {
   //send msg on button click
   // $('.send-msg').click(sendMsg);
@@ -50,7 +57,7 @@ $(document).ready(function () {
     }
   });
 
-  //User panel listener
+  //left user-panel on click switch current user chat-panel
   $('.user-panel').click(function() {
     $('.user-panel').removeClass('is-active');
     $(this).addClass('is-active');
@@ -63,7 +70,7 @@ $(document).ready(function () {
     
     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
 
-    //aggiorno current user nel contact menu
+    //aggiorno current user nel right-wrapper -> menu-left -> current-user
     var $currentUser = $(this).html();
     $('.contact-menu-container .current-user').html($currentUser);
 
@@ -112,7 +119,6 @@ $(document).ready(function () {
   $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
     $(this).hide();
   })  
-});
 
 //hide-show arrow-down(delete-msg-menu)
 //old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
@@ -120,3 +126,7 @@ $(document).ready(function () {
 //   $(this).find('.delete-msg-menu').toggle();
 //   // $(this).hide();
 // })
+
+
+});
+
