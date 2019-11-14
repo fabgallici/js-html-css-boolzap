@@ -1,5 +1,3 @@
-
-
 var emptyMsg = true;
 
 function sendMsg() {
