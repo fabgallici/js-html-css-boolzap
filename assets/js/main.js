@@ -183,7 +183,7 @@ $(document).ready(function () {
 
   //delete chat msg con event Delegation su chat-panel
   //hide-show arrow-down(delete-msg-menu) when mousenter/leave msg-container + fix del-msg-dropdown
-  $('.chat-panel')
+  $('.chat-container')
       .on('mouseenter', '.msg-container', function() {
         $(this).find('.delete-msg-menu').toggle();
       })
@@ -192,29 +192,39 @@ $(document).ready(function () {
         $(this).find('.delete-msg-dropdown').hide();
       })
   //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
-  $('.chat-panel').on('click', '.delete-msg-menu', function() {
+  $('.chat-container').on('click', '.delete-msg-menu', function() {
     $(this).find('.delete-msg-dropdown').toggle();
   })
   //remove entire current msg on click delete-msg link
-  $('.chat-panel').on('click', '.delete-msg-dropdown a', function() {
+  $('.chat-container').on('click', '.delete-msg-dropdown a', function() {
     $(this).closest('.delete-msg').remove();
   })
   //hide delete-msg-dropdown on mouseleave
-  $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
+  $('.chat-container').on('mouseleave', '.delete-msg-dropdown', function () {
     $(this).hide();
   })  
 
 
   //Bonus: chat-menu left add Contact
   $('.new-chat-addContact').click(function () {
-    console.log('click');
     //chiedo utente il nome e salvo var
+
     var userName = prompt('inserisci nome nuovo contatto');
-    //creo handlebar template addContact e appendo template al user-container
-    addContactHandle(userName);
-    //aggiungere eventDelegation evento click sul user panel
-    //creo nuova chat con relativo data name
-    addChatPanelHandle(userName);
+    console.log(userName);
+    console.log(typeof userName);
+    if (!userName == null) {
+      console.log("username non e null");
+    }
+    if (!userName == "") {
+      //creo handlebar template addContact e appendo template al user-container
+      addContactHandle(userName);
+      //aggiungere eventDelegation evento click sul user panel
+      //creo nuova chat con relativo data name
+      addChatPanelHandle(userName);
+    } else {
+      alert('nome inserito non valido');
+    }
+    
   })
 
 
