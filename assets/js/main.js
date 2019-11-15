@@ -21,10 +21,10 @@ function sendHandleMsg() {
   var $message = $('.chat-msg').val();
   if ($message !== "") {
     var source = document.getElementById("handle-sent-template").innerHTML;
-    var elementMsg = Handlebars.compile(source);
+    var sendMsgTemplate = Handlebars.compile(source);
 
     var contextMsg = {msgTxt: $message};
-    var htmlMsg = elementMsg(contextMsg);
+    var htmlMsg = sendMsgTemplate(contextMsg);
 
     $('.chat-panel.is-active').append(htmlMsg);
 
@@ -49,6 +49,21 @@ function receivedMsg() {
 
 }
 
+function receiveHandleMsg() {
+  setTimeout(function () {
+    if (!emptyMsg) {
+      var $message = 'ok';
+      var source = document.getElementById('handle-received-template').innerHTML;
+      var receivedMsgTemplate = Handlebars.compile(source);
+      var contextMsg = { msgTxt: $message };
+      var htmlMsg = receivedMsgTemplate(contextMsg);
+
+      $('.chat-panel.is-active').append(htmlMsg);
+
+      $('.chat-msg').val('');
+    }
+  }, 1000);
+}
 //aggiorno current user nel right-wrapper -> menu-left -> current-user
 //con valore user-panel attivo
 function updateCurrentUser() {
@@ -56,7 +71,7 @@ function updateCurrentUser() {
   $('.contact-menu-container .current-user').html($currentUser);
 }
 
-//Init Document Ready
+//---------Init Document Ready-------------
 $(document).ready(function () {
   
   //init update current user
@@ -65,25 +80,29 @@ $(document).ready(function () {
   //footer -> input-container -> send-msg icon  send input msg on click
   $('.send-msg').click(function() {
     // sendMsg();
+    // receivedMsg();
     sendHandleMsg();
-    receivedMsg();
+    receiveHandleMsg();
   })
 
   //send input msg when press Enter , funziona anche con $(document)
-  $('input').keypress(function (e) {
-    if(e.keyCode === 13) {
-      // sendMsg();
-      sendHandleMsg();
-      receivedMsg();
-    }
-  });
-
-  // $('input').keyup(function (e) {
-  //   if (e.which === 13) {
-  //     sendMsg();
+  // $('input').keypress(function (e) {
+  //   if(e.keyCode === 13) {
+  //     // sendMsg();
+  //     sendHandleMsg();
   //     receivedMsg();
   //   }
   // });
+
+  document.querySelector('.chat-msg').onkeypress = function (e) {
+    if (e.keyCode === 13) {
+      // sendMsg();
+      // receivedMsg();
+      sendHandleMsg();
+      receiveHandleMsg();
+      
+    }
+  };
 
   //left user-panel on click switch current user chat-panel
   $('.user-panel').click(function() {
@@ -158,6 +177,11 @@ $(document).ready(function () {
 //   // $(this).hide();
 // })
 
-
+  // $('input').keyup(function (e) {
+  //   if (e.which === 13) {
+  //     sendMsg();
+  //     receivedMsg();
+  //   }
+  // });
 });
 
