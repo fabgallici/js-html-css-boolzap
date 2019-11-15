@@ -212,12 +212,12 @@ $(document).ready(function () {
     var userName = prompt('inserisci nome nuovo contatto');
     console.log(userName);
     console.log(typeof userName);
-    if (!userName == null) {
-      console.log("username non e null");
-    } else {
-      console.log("username e null");
-    }
-    if (!userName == "") {
+    // if (userName !== null) {
+    //   console.log("username non e null");
+    // } else {
+    //   console.log("username e null");
+    // }
+    if (userName !== null && userName !== "") {
       //creo handlebar template addContact e appendo template al user-container
       addContactHandle(userName);
       //aggiungere eventDelegation evento click sul user panel
