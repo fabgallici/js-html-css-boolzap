@@ -103,43 +103,14 @@ $(document).ready(function () {
   })
 
   //send input msg when press Enter , funziona anche con $(document)
-  // $('input').keypress(function (e) {
-  //   if(e.keyCode === 13) {
-  //     // sendMsg();
-  //     sendHandleMsg();
-  //     receivedMsg();
-  //   }
-  // });
-
-  document.querySelector('.chat-msg').onkeypress = function (e) {
-    if (e.keyCode === 13) {
+  $('input').keypress(function (e) {
+    if(e.keyCode === 13) {
       // sendMsg();
-      // receivedMsg();
       sendHandleMsg();
-      receiveHandleMsg();
-      
+      receivedMsg();
     }
-  };
+  });
 
-  //left user-panel on click switch current user chat-panel
-  // $('.user-panel').click(function() {
-
-  //   if (!$(this).hasClass('is-active')) {
-  //     $('.user-panel').removeClass('is-active');
-  //     $(this).addClass('is-active');
-
-  //     //select data-name corresponding chat to active
-  //     var $currentDataName = $(this).attr('data-name');
-  //     console.log($currentDataName);
-  //     //attivo la chat corrispondente all'user-panel selezionato
-  //     $('.chat-panel').removeClass('is-active');
-
-  //     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
-
-  //     //aggiorno current user nel right-wrapper -> menu-left -> current-user
-  //     updateCurrentUser();
-  //   }
-  // })
   //left user-panel on click switch current user chat-panel
   //refactor con eventDelegation per inserimento nuovo contatto new chat
   $('.user-container').on('click', '.user-panel', function () {
@@ -210,13 +181,7 @@ $(document).ready(function () {
     //chiedo utente il nome e salvo var
 
     var userName = prompt('inserisci nome nuovo contatto');
-    console.log(userName);
-    console.log(typeof userName);
-    // if (userName !== null) {
-    //   console.log("username non e null");
-    // } else {
-    //   console.log("username e null");
-    // }
+
     if (userName !== null && userName !== "") {
       //creo handlebar template addContact e appendo template al user-container
       addContactHandle(userName);
@@ -229,13 +194,15 @@ $(document).ready(function () {
     
   })
 
+  // document.querySelector('.chat-msg').onkeypress = function (e) {
+  //   if (e.keyCode === 13) {
+  //     //sendMsg();
+  //     //receivedMsg();
+  //     sendHandleMsg();
+  //     receiveHandleMsg();
 
-//hide-show arrow-down(delete-msg-menu)
-//old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)
-// $('.chat-panel').on('mouseenter mouseleave', '.delete-msg', function () {
-//   $(this).find('.delete-msg-menu').toggle();
-//   // $(this).hide();
-// })
+  //   }
+  // };
 
   // $('input').keyup(function (e) {
   //   if (e.which === 13) {
