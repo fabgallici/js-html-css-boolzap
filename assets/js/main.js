@@ -17,6 +17,25 @@ function sendMsg() {
   
 }
 
+function sendHandleMsg() {
+  var $message = $('.chat-msg').val();
+  if ($message !== "") {
+    var source = document.getElementById("handle-template").innerHTML;
+    var elementMsg = Handlebars.compile(source);
+
+    var contextMsg = {msgTxt: $message};
+    var htmlMsg = elementMsg(contextMsg);
+
+    $('.chat-panel.is-active').append(htmlMsg);
+
+    $('.chat-msg').val('');
+    emptyMsg = false;
+  } else {
+    emptyMsg = true;
+  }
+}
+
+
 function receivedMsg() {
   setTimeout(function() {
     if (!emptyMsg) {
@@ -45,14 +64,16 @@ $(document).ready(function () {
 
   //footer -> input-container -> send-msg icon  send input msg on click
   $('.send-msg').click(function() {
-    sendMsg();
+    // sendMsg();
+    sendHandleMsg();
     receivedMsg();
   })
 
   //send input msg when press Enter , funziona anche con $(document)
   $('input').keypress(function (e) {
     if(e.keyCode === 13) {
-      sendMsg();
+      // sendMsg();
+      sendHandleMsg();
       receivedMsg();
     }
   });

@@ -170,6 +170,24 @@
         </div>
     </div>
 
+    <!-- templating handlebars -->
+    <script id="handle-template" type="text/x-handlebars-template">
+      <div class="sent-msg msg-style-1 delete-msg">
+        <div class="msg-container">
+          <div class="sent-text">{{msgTxt}}</div>
+          <span class="msg-time">10:10</span>
+          <div class="delete-msg-menu">
+            <i class="fas fa-angle-down"></i>
+            <ul class="delete-msg-dropdown">
+              <li><a href="#">Delete message</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
