@@ -64,6 +64,23 @@ function receiveHandleMsg() {
     }
   }, 1000);
 }
+//aggiunge nuovo contatto user-panel
+function addContactHandle(name) {
+  var source = document.getElementById('handle-addContact-template').innerHTML;
+  var addContactTemplate = Handlebars.compile(source);
+  var contextMsg = { dataName: name, contactName: name };
+  var htmlMsg = addContactTemplate(contextMsg);
+  $('.user-container').append(htmlMsg);
+
+}
+function addChatPanelHandle(name) {
+  var source = document.getElementById('handle-chatPanel-template').innerHTML;
+  var addChatPanelTemplate = Handlebars.compile(source);
+  var contextMsg = { dataName: name };
+  var htmlMsg = addChatPanelTemplate(contextMsg);
+  $('.chat-container').append(htmlMsg);
+}
+
 //aggiorno current user nel right-wrapper -> menu-left -> current-user
 //con valore user-panel attivo
 function updateCurrentUser() {
@@ -169,6 +186,20 @@ $(document).ready(function () {
   $('.chat-panel').on('mouseleave', '.delete-msg-dropdown', function () {
     $(this).hide();
   })  
+
+
+  //Bonus: chat-menu left add Contact
+  $('.new-chat-addContact').click(function () {
+    console.log('click');
+    //chiedo utente il nome e salvo var
+    var userName = prompt('inserisci nome nuovo contatto');
+    //creo handlebar template addContact e appendo template al user-container
+    addContactHandle(userName);
+    //aggiungere eventDelegation evento click sul user panel
+    //creo nuova chat con relativo data name
+    addChatPanelHandle(userName);
+  })
+
 
 //hide-show arrow-down(delete-msg-menu)
 //old version, divisa in due per risolvere piccolo bug hover su msg-dropdown (se esco top dopo click su msg-menu)

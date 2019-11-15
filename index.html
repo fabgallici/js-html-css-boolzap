@@ -21,8 +21,11 @@
             <li>
               <a href="#"><img src="assets/img/icon-webwhatsapp(1).svg" alt="status_icon"/></a>
             </li>
-            <li>
-              <a href="#"><img src="assets/img/icon-webwhatsapp(2).svg" alt="new_chat"/></a>
+            <li class="new-chat-menu">
+              <a href="#" class="new_chat"><img src="assets/img/icon-webwhatsapp(2).svg" alt="new_chat"/></a>
+              <ul class="new-chat-dropdown">
+                <li><a href="#" class="new-chat-addContact">Add contact</a></li>
+              </ul>
             </li>
             <li>
               <a href="#"><img src="assets/img/icon-webwhatsapp(3).svg" alt="dot_menu"/></a>
@@ -200,7 +203,27 @@
         </div>
       </div>   
     </script>
-
+    <!-- add Contact template handlebars -->
+    <script id="handle-addContact-template" type="text/x-handlebars-template">   
+      <div class="user-panel-container">
+          <div class="user-panel" data-name="{{dataName}}">
+            <div class="profile-img">
+              <a href="#"><img src="assets/img/user-img-2.png" alt="user_1_img"></a>
+            </div>
+            <div class="contact-panel">
+              <div class="contact-name">{{contactName}}</div>
+              <div class="contact-last-msg">
+                <img src="assets/img/icon-webwhatsapp(8).svg" alt="mark_icon">
+                Prova whatsApp...
+              </div>
+            </div>
+          </div>
+      </div>
+    </script>
+    <!-- chat panel template handlebars -->
+    <script id="handle-chatPanel-template" type="text/x-handlebars-template">   
+      <div class="chat-panel" data-name="{{dataName}}"></div>
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

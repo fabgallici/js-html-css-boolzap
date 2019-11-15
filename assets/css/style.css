@@ -77,6 +77,33 @@ a {
   padding: 10px 15px;
   flex-grow: 1;
 }
+
+/* New Chat Menu, add new Contact */
+.new-chat-menu {
+  position: relative;
+}
+.new-chat-dropdown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -35px;
+  display: none;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.menu-right .new-chat-dropdown li {
+  margin-left: 0;
+}
+.menu-right .new-chat-dropdown a {
+  padding: 5px 10px;
+}
+.menu-right .new-chat-dropdown a:hover {
+  background-color: #EEEEEE;
+}
+.new-chat-menu:hover .new-chat-dropdown {
+  display: block;
+}
 /* ----------------------------------------- */
 /*           COMMON L R SIDES RULES              */
 /* ----------------------------------------- */
