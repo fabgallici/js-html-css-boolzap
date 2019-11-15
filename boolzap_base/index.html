@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>WhatsApp</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Aside Left user panel LEFT SIDE -->
+      <aside class="aside-left">
+        <!-- LEFT SIDE top user menu -->
+        <div class="user-menu-container">
+          <div class="menu-left">
+            <a href="#"><img src="assets/img/icon-webwhatsapp.svg" alt="user_icon"/></a>
+          </div>
+          <ul class="menu-right">
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(1).svg" alt="status_icon"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(2).svg" alt="new_chat"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(3).svg" alt="dot_menu"/></a>
+            </li>
+          </ul>
+        </div>
+        <!-- LEFT SIDE user panel -->
+        <div class="user-container">
+          <!-- User search  -->
+          <div class="user-search-container">
+            <div class="user-search-panel">
+              <a href="#"><img src="assets/img/icon-webwhatsapp(5).svg" alt="user_search_icon"/></a>
+              <input type="text"class="search-user input-common" placeholder="Cerca o inizia una nuova chat"/>
+            </div>          
+          </div>
+          <!-- User Panel -->
+          <div class="user-panel-container">
+            <div class="user-panel is-active" data-name="Marco">
+              <div class="profile-img">
+                <a href="#"><img src="assets/img/user-img-1.png" alt="user_1_img"></a>
+              </div>
+              <div class="contact-panel">
+                <div class="contact-name">Marco</div>
+                <div class="contact-last-msg">
+                  <img src="assets/img/icon-webwhatsapp(8).svg" alt="mark_icon">
+                  Prova whatsApp...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-panel-container">
+            <div class="user-panel" data-name="Paolo">
+              <div class="profile-img">
+                <a href="#"><img src="assets/img/user-img-2.png" alt="user_1_img"></a>
+              </div>
+              <div class="contact-panel">
+                <div class="contact-name">Paolo</div>
+                <div class="contact-last-msg">
+                  <img src="assets/img/icon-webwhatsapp(8).svg" alt="mark_icon">
+                  Prova whatsApp...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="user-panel-container">
+            <div class="user-panel" data-name="Luca">
+              <div class="profile-img">
+                <a href="#"><img src="assets/img/user-img-3.png" alt="user_1_img"></a>
+              </div>
+              <div class="contact-panel">
+                <div class="contact-name">Luca</div>
+                <div class="contact-last-msg">
+                  <img src="assets/img/icon-webwhatsapp(8).svg" alt="mark_icon">
+                  Prova whatsApp...
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </aside>
+
+      <!-- Main wrapper RIGHT SIDE-->
+      <div class="right-wrapper">
+        <!-- RIGHT SIDE contact top menu  -->
+        <header>
+          <div class="contact-menu-container">
+            <div class="menu-left">
+              <!-- Copia Varoli current user da Left Side user Panel -->
+              <div class="user-panel-container">
+                <div class="current-user">                
+              </div>
+              </div>
+              
+            </div>
+          <ul class="menu-right">
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(12).svg" alt="search_icon"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(13).svg" alt="attach_icon"/></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/img/icon-webwhatsapp(3).svg" alt="dot_menu"/></a>
+            </li>
+          </ul>  
+          </div>
+        </header>
+
+        <!-- RIGHT SIDE Main user chat -->
+        <main>
+          <!-- Current Chat -->
+          <div class="chat-container">
+            <div class="chat-panel is-active" data-name="Marco"></div>
+            <div class="chat-panel" data-name="Paolo"></div>
+            <div class="chat-panel" data-name="Luca"></div>
+          </div>
+        </main>
+
+        <footer>
+          <!-- Botton Input Panel -->
+          <div class="input-container">
+            <div class="input-icon">
+              <i class="far fa-smile"></i>
+            </div>
+            <div class="input-panel">
+              <input type="text"class="chat-msg input-common" placeholder="Scrivi un messaggio"/>
+            </div>
+            <div class="input-button">
+              <i class="fas fa-paper-plane send-msg"></i>
+              <!-- <button class="send-msg">Send Chat</button> -->
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- blocco template non visibile in pagina -->
+    <div id="template">
+      <div class="sent-msg msg-style-1 delete-msg">
+        <div class="msg-container">
+          <div class="sent-text"></div>
+          <span class="msg-time">10:10</span>
+          <div class="delete-msg-menu">
+            <i class="fas fa-angle-down"></i>
+            <ul class="delete-msg-dropdown">
+              <li><a href="#">Delete message</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="received-msg msg-style-2 delete-msg">
+        <div class="msg-container">
+          <div class="sent-text"></div>
+          <span class="msg-time">10:10</span>
+          <div class="delete-msg-menu">
+            <i class="fas fa-angle-down"></i>
+            <ul class="delete-msg-dropdown">
+              <li><a href="#">Delete message</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
