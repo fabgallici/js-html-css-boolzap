@@ -172,18 +172,22 @@
 
     <!-- templating handlebars -->
     <script id="handle-template" type="text/x-handlebars-template">
-      <div class="sent-msg msg-style-1 delete-msg">
-        <div class="msg-container">
-          <div class="sent-text">{{msgTxt}}</div>
-          <span class="msg-time">10:10</span>
-          <div class="delete-msg-menu">
-            <i class="fas fa-angle-down"></i>
-            <ul class="delete-msg-dropdown">
-              <li><a href="#">Delete message</a></li>
-            </ul>
+      <!-- sent message handlebar template -->
+      <div id="handle-sent-template">
+        <div class="sent-msg msg-style-1 delete-msg">
+          <div class="msg-container">
+            <div class="sent-text">{{msgTxt}}</div>
+            <span class="msg-time">10:10</span>
+            <div class="delete-msg-menu">
+              <i class="fas fa-angle-down"></i>
+              <ul class="delete-msg-dropdown">
+                <li><a href="#">Delete message</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      
     </script>
 
 

@@ -20,7 +20,7 @@ function sendMsg() {
 function sendHandleMsg() {
   var $message = $('.chat-msg').val();
   if ($message !== "") {
-    var source = document.getElementById("handle-template").innerHTML;
+    var source = document.getElementById("handle-sent-template").innerHTML;
     var elementMsg = Handlebars.compile(source);
 
     var contextMsg = {msgTxt: $message};
