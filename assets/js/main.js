@@ -214,6 +214,8 @@ $(document).ready(function () {
     console.log(typeof userName);
     if (!userName == null) {
       console.log("username non e null");
+    } else {
+      console.log("username e null");
     }
     if (!userName == "") {
       //creo handlebar template addContact e appendo template al user-container
