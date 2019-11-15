@@ -122,8 +122,27 @@ $(document).ready(function () {
   };
 
   //left user-panel on click switch current user chat-panel
-  $('.user-panel').click(function() {
+  // $('.user-panel').click(function() {
 
+  //   if (!$(this).hasClass('is-active')) {
+  //     $('.user-panel').removeClass('is-active');
+  //     $(this).addClass('is-active');
+
+  //     //select data-name corresponding chat to active
+  //     var $currentDataName = $(this).attr('data-name');
+  //     console.log($currentDataName);
+  //     //attivo la chat corrispondente all'user-panel selezionato
+  //     $('.chat-panel').removeClass('is-active');
+
+  //     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
+
+  //     //aggiorno current user nel right-wrapper -> menu-left -> current-user
+  //     updateCurrentUser();
+  //   }
+  // })
+  //left user-panel on click switch current user chat-panel
+  //refactor con eventDelegation per inserimento nuovo contatto new chat
+  $('.user-container').on('click', '.user-panel', function () {
     if (!$(this).hasClass('is-active')) {
       $('.user-panel').removeClass('is-active');
       $(this).addClass('is-active');
@@ -139,9 +158,7 @@ $(document).ready(function () {
       //aggiorno current user nel right-wrapper -> menu-left -> current-user
       updateCurrentUser();
     }
-
-
-  })
+  }) 
 
   //search user left panel
   $('.user-search-panel .search-user').on('keyup', function () {
