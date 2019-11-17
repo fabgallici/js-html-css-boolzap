@@ -235,10 +235,29 @@ $(document).ready(function () {
   // })  
   //delete chat msg con event Delegation su chat-panel
   //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
-  document.querySelector('.chat-container').addEventListener('click', function (e) { //es. didattico, si poteva fare con semplice hover css
+  document.querySelector('.chat-container').addEventListener('click', function (e) { 
     var deleteMsgMenu = e.target.closest('.delete-msg-menu');
     if (deleteMsgMenu !== null) {
       deleteMsgMenu.querySelector('.delete-msg-dropdown').classList.toggle('active');
+    }
+  })
+  //remove entire current msg on click delete-msg link
+  // document.querySelector('.chat-container').addEventListener('click', function (e) {
+  //   var deleteMsg = e.target.closest('.delete-msg-dropdown a');
+  //   if (deleteMsg !== null) {
+  //     deleteMsg.closest('.delete-msg').style.display = 'none';
+  //   }
+  // })
+
+  document.querySelector('.chat-container').addEventListener('click', function (e) {
+    if (e.target.matches('.delete-msg-menu')) {
+      deleteMsgMenu.querySelector('.delete-msg-dropdown').classList.toggle('active');
+    }
+  })
+  //remove entire current msg on click delete-msg link
+  document.querySelector('.chat-container').addEventListener('click', function (e) {
+    if (e.target.matches('.delete-msg-dropdown a')) {
+      e.target.closest('.delete-msg').remove();
     }
   })
 
