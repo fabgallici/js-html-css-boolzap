@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to bottom, #009688, #009688 20%, #D7DBD7 20%, #D7DBD7 80%);
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  height: 97.5vh; /*pair 100vh page-w - 2.5vh margin */
+}
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* ----------------------------------------- */
+/*            PAGE SETUP                   */
+/* ----------------------------------------- */
+.page-wrapper {
+  display: flex;
+  height: 95vh;
+  white-space: nowrap;
+  z-index: 1;
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 2.5vh;
+}
+
+.aside-left .user-menu-container,
+.right-wrapper .contact-menu-container,
+.right-wrapper .input-container {
+  height: 70px;
+}
+
+/* ----------------------------------------- */
+/*            LEFT SIDE                   */
+/* ----------------------------------------- */
+.aside-left .user-menu-container {
+  border-right: 1px solid #DBDBDB;
+}
+.aside-left {
+  /* flex-grow: 1; */
+}
+.aside-left .user-container {
+  height: calc(95vh - 70px);
+  background-color: #fff;
+  overflow-y: auto;
+}
+.user-menu-container .menu-left img {
+  height: 40px;
+  width: auto;
+}
+
+/*------- user search section -------*/
+.user-search-container {
+  background-color: #F8F8F8;
+  padding: 5px 10px;
+}
+.user-search-container .user-search-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+.user-search-panel img {
+  vertical-align: middle;
+}
+.user-search-panel .search-user {
+  height: 30px;
+  padding: 10px 15px;
+  flex-grow: 1;
+}
+.user-panel:hover {
+  cursor: pointer;
+}
+/* New Chat Menu, add new Contact */
+.new-chat-menu {
+  position: relative;
+}
+.new-chat-dropdown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -35px;
+  display: none;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.menu-right .new-chat-dropdown li {
+  margin-left: 0;
+}
+.menu-right .new-chat-dropdown a {
+  padding: 5px 10px;
+}
+.menu-right .new-chat-dropdown a:hover {
+  background-color: #EEEEEE;
+}
+.new-chat-menu:hover .new-chat-dropdown {
+  display: block;
+}
+/* ----------------------------------------- */
+/*           COMMON L R SIDES RULES              */
+/* ----------------------------------------- */
+.user-menu-container,
+.contact-menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #EEEEEE;
+}
+
+.menu-right li {
+  margin-left: 20px;
+}
+
+input::placeholder {
+  color: #A0A0A0;
+}
+/* remove focus border */
+textarea:focus, input:focus{
+    outline: none;
+}
+.input-common {
+  border-color: transparent;
+  border-radius: 999px;
+  color: #4A4A4A;
+}
+
+/*-------- User Panel & Current User --------- */
+.user-panel-container .current-user,
+.user-panel-container .user-panel {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+.user-panel-container .current-user .profile-img img,
+.user-panel-container .user-panel .profile-img img {
+  height: 50px;
+  width: auto;
+  margin: 0 10px;
+}
+.user-panel-container .current-user .contact-last-msg,
+.user-panel-container .user-panel .contact-last-msg {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.8rem;
+}
+.user-panel-container .current-user .contact-last-msg img,
+.user-panel-container .user-panel .contact-last-msg img {
+  margin-right: 5px;
+}
+.aside-left .user-panel-container .user-panel.is-active {
+  background-color: #E9EBEB;
+}
+/* ----------------------------------------- */
+/*            RIGHT SIDE                  */
+/* ----------------------------------------- */
+.right-wrapper {
+  flex-grow: 3;
+}
+.right-wrapper .chat-container {
+  height: calc(95vh - 140px);
+  background-image: url('../img/chat-bg.png');
+  background-size: contain;
+  overflow-y: auto;
+}
+.right-wrapper .chat-panel {
+  display: none;
+}
+.right-wrapper .chat-panel.is-active {
+  display: block;
+}
+/* ----------------------------------------- */
+/*            FOOTER - Input Panel           */
+/* ----------------------------------------- */
+.input-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #EFEFEF;
+}
+.input-container .input-panel {
+  flex-grow: 1;
+  text-align: center;  
+  min-width: 200px;
+}
+.input-container .input-panel .chat-msg {
+  width: 100%;
+  height: 42px;
+  padding: 10px 15px;
+
+}
+.input-container i {
+  color: #949A9C;
+  font-size: 25px;
+}
+.input-container .input-icon,
+.input-container .input-button {
+  margin: 0 20px;
+}
+.input-container .send-msg:hover {
+  cursor: pointer;
+}
+
+/* ----------------------------------------- */
+/*            TEMPLATING                  */
+/* ----------------------------------------- */
+#template {
+  display: none;
+}
+.msg-style-1 { 
+  display: flex;
+  justify-content: flex-end;
+}
+.msg-container {
+  max-width: 60%;
+  position: relative;
+  margin: 5px;
+  padding: 7px 15px 2px 15px;
+  background-color: lightgreen;
+  border-radius: 8px;
+}
+.sent-text {
+  white-space: initial; /* fa andare a capo testo senza sforare container */
+  word-break: break-word;
+}
+
+.msg-time {
+  float: right;
+  font-size: 0.7rem;
+  color: #98AA89;
+}
+
+/* Received Message */
+.msg-style-2 { 
+  display: flex;
+  justify-content: flex-start;
+}
+.msg-style-2 .msg-container {
+  background-color: #fff;
+}
+
+/*--- delete dropdown section ---*/
+.msg-container .delete-msg-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  padding: 0px 5px;
+  z-index: 2;
+}
+.msg-container .delete-msg-dropdown {
+  position: absolute;
+  display: none;
+  top: 15px;
+  right: 0;
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 5px;
+  z-index: 99;
+}
+.msg-style-2 .delete-msg-dropdown {
+  left: -10px;
+  right: auto;
+}
+.msg-container .delete-msg-dropdown a {
+  padding: 10px 2px;
+  border-radius: 4px;
+  color: #000;
+}
+.msg-container .delete-msg-dropdown a:hover {
+  background-color: #EEEEEE;
+}
+/*--- Media Query ---*/
+@media screen and (max-width: 1140px) {
+  .page-wrapper {
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
+  }
+
+  .right-wrapper .chat-container {
+  height: calc(100vh - 140px);
+  }
+
+  .aside-left .user-container {
+  height: calc(100vh - 70px);
+}
+
+}
