@@ -17,6 +17,7 @@ li {
 a {
   text-decoration: none;
 }
+
 /* ----------------------------------------- */
 /*            PAGE SETUP                   */
 /* ----------------------------------------- */
@@ -280,6 +281,17 @@ textarea:focus, input:focus{
 }
 .msg-container .delete-msg-dropdown a:hover {
   background-color: #EEEEEE;
+}
+.msg-container:hover .delete-msg-menu {
+  display: block;
+}
+
+
+.active {
+  display: block !important;
+}
+.delete-msg-menu.active-drop .delete-msg-dropdown {
+  display: block !important;
 }
 /*--- Media Query ---*/
 @media screen and (max-width: 1140px) {
