@@ -89,58 +89,6 @@ function updateCurrentUser() {
 }
 
 
-
-
-//left user-panel on click switch current user chat-panel
-//refactor con eventDelegation per inserimento nuovo contatto new chat
-var userContainer = document.querySelector('.user-container');
-userContainer.addEventListener('click', function (e) {
-
-  var curUserPanel = e.target.closest('.user-panel');
-  console.log(curUserPanel);
-  if (curUserPanel && curUserPanel.matches('.user-panel')) { //senza curUserPanel first condition return "typeerror cannot read prop" in alcune zone
-    console.log('found');
-    if (!curUserPanel.classList.contains('is-active')) {
-      console.log('not active');
-      document.querySelectorAll(".user-panel").forEach(function (el) {
-        el.classList.remove("is-active");
-      });
-      curUserPanel.classList.add('is-active');
-      var curDataName = curUserPanel.getAttribute('data-name');
-      document.querySelectorAll(".chat-panel").forEach(function (el) {
-        el.classList.remove("is-active");
-      });
-      document.querySelector('.chat-panel[data-name="' + curDataName + '"]').classList.add('is-active');
-      updateCurrentUser();
-    }
-  } else {
-    console.log('not found');
-  }
-  // const userPanel = document.querySelector('.user-panel');
-  // console.log(e.target);
-  // if (e.target.matches('.user-panel') || userPanel.contains(e.target)) {
-  //   console.log('match target');
-  //   if (!e.target.classList.contains('is-active')) {
-  //     e.target.classList.remove('is-active');
-  //     e.target.classList.add('is-active');
-
-  //     //select data-name corresponding chat to active
-  //     var currentDataName = e.target.getAttribute('data-name');
-  //     console.log(currentDataName);
-  //     //attivo la chat corrispondente all'user-panel selezionato
-  //     document.querySelectorAll(".chat-panel").forEach(function (el) {
-  //       el.classList.remove("is-active");
-  //     });
-  //     // document.querySelectorAll('.chat-panel').classList.remove('is-active');
-
-  //     document.querySelector('.chat-panel[data-name="' + currentDataName + '"]').classList.add('is-active');
-
-  //     //aggiorno current user nel right-wrapper -> menu-left -> current-user
-  //     updateCurrentUser();
-  //   }
-
-  // }
-})
 //---------Init Document Ready-------------
 $(document).ready(function () {
   
@@ -184,10 +132,35 @@ $(document).ready(function () {
   //   }
   // }) 
 
-
-
-
-
+  //left user-panel on click switch current user chat-panel - Vanilla js
+  //refactor con eventDelegation per inserimento nuovo contatto new chat
+  var userContainer = document.getElementsByClassName('user-container')[0];
+  userContainer.addEventListener('click', function (e) {
+    //risalgo dall evento per verificare se è uno degli user-panel
+    var curUserPanel = e.target.closest('.user-panel'); //return null se elemento non esiste
+    //controllo che abbia trovato riscontro positivo
+    if (curUserPanel !== null) {
+      if (!curUserPanel.classList.contains('is-active')) {  //ottimizzazione
+        //rimuovo indistintamente a tutti gli user-panel la classe is-active
+        document.querySelectorAll(".user-panel").forEach(function (el) {
+          el.classList.remove("is-active");
+        });
+        //aggiungo is-active all user-panel corrente
+        curUserPanel.classList.add('is-active');
+        //select data-name corresponding chat to active
+        var curDataName = curUserPanel.getAttribute('data-name');
+        //rimuovo indistintamente a tutti i chat-panel la classe is-active
+        document.querySelectorAll(".chat-panel").forEach(function (el) {
+          el.classList.remove("is-active");
+        });
+        //attivo la chat corrispondente all'user-panel selezionato tramite attributo
+        // document.querySelector('.chat-panel[data-name="' + curDataName + '"]').classList.add('is-active');
+        document.querySelector(`.chat-panel[data-name="${curDataName}"]`).classList.add('is-active');
+        //aggiorno current user nel right-wrapper -> menu-left -> current-user
+        updateCurrentUser();
+      }
+    }
+  })
 
   //search user left panel
   $('.user-search-panel .search-user').on('keyup', function () {
