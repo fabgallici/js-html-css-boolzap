@@ -95,55 +95,19 @@ $(document).ready(function () {
   //init update current user
   updateCurrentUser();
 
-  //footer -> input-container -> send-msg icon  send input msg on click
-  // $('.send-msg').click(function() {
-  //   // sendMsg();
-  //   // receivedMsg();
-  //   sendHandleMsg();
-  //   receiveHandleMsg();
-  // })
-
   document.getElementsByClassName('send-msg')[0].addEventListener('click', function () {
     sendHandleMsg();
     receiveHandleMsg();
   })
 
-  //send input msg when press Enter , funziona anche con $(document)
-  // $('input').keypress(function (e) {
-  //   if(e.keyCode === 13) {
-  //     // sendMsg();
-  //     sendHandleMsg();
-  //     receivedMsg();
-  //   }
-  // });
+
+  //send input msg when press Enter
   document.querySelector('#inp-type-msg').addEventListener('keydown', function (e) {
-    // console.log(e.code);
     if (e.keyCode === 13) {
-      // sendMsg();
       sendHandleMsg();
       receivedMsg();
     }
   })
-
-  //left user-panel on click switch current user chat-panel
-  //refactor con eventDelegation per inserimento nuovo contatto new chat
-  // $('.user-container').on('click', '.user-panel', function () {
-  //   if (!$(this).hasClass('is-active')) {
-  //     $('.user-panel').removeClass('is-active');
-  //     $(this).addClass('is-active');
-
-  //     //select data-name corresponding chat to active
-  //     var $currentDataName = $(this).attr('data-name');
-  //     console.log($currentDataName);
-  //     //attivo la chat corrispondente all'user-panel selezionato
-  //     $('.chat-panel').removeClass('is-active');
-
-  //     $('.chat-panel[data-name="' + $currentDataName + '"]').addClass('is-active');
-
-  //     //aggiorno current user nel right-wrapper -> menu-left -> current-user
-  //     updateCurrentUser();
-  //   }
-  // }) 
 
   //left user-panel on click switch current user chat-panel - Vanilla js
   //refactor con eventDelegation per inserimento nuovo contatto new chat
@@ -176,26 +140,6 @@ $(document).ready(function () {
   })
 
   //search user left panel
-  // $('.user-search-panel .search-user').on('keyup', function () {
-  //   //salvo l'input corrente in una stringa
-  //   var $searchUserInput = $(this).val();
-  //   $searchUserInput = $searchUserInput.toLowerCase();
-
-  //   //per ogni Nome Contatto vedo se è inclusa la stringa sopra, 
-  //   //se non è inclusa nascondo il blocco panel contatto corrispondente o viceversa
-  //   $('.user-panel-container .contact-name').each(function (index) {
-  //     var $contactName = $(this).text();
-  //     $contactName = $contactName.toLowerCase();
- 
-  //     if (!$contactName.includes($searchUserInput)) {
-  //       $(this).parents('.user-panel-container').hide();
-  //     } else {
-  //       $(this).parents('.user-panel-container').show();
-  //     }
-  //   })
-  // })
-
-  //search user left panel
   document.querySelector('.user-search-panel .search-user').addEventListener('keyup', (e) => {
     //salvo l'input corrente in una stringa
     var searchUserInput = e.currentTarget.value.toLowerCase();
@@ -210,29 +154,7 @@ $(document).ready(function () {
       }
     })
   })
-
-  //delete chat msg con event Delegation su chat-panel
-  //hide-show arrow-down(delete-msg-menu) when mousenter/leave msg-container + fix del-msg-dropdown
-  // $('.chat-container')
-  //     .on('mouseenter', '.msg-container', function() {
-  //       $(this).find('.delete-msg-menu').toggle();
-  //     })
-  //     .on('mouseleave', '.msg-container', function () {
-  //       $(this).find('.delete-msg-menu').toggle();
-  //       $(this).find('.delete-msg-dropdown').hide();
-  //     })
-  // //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
-  // $('.chat-container').on('click', '.delete-msg-menu', function() {
-  //   $(this).find('.delete-msg-dropdown').toggle();
-  // })
-  // //remove entire current msg on click delete-msg link
-  // $('.chat-container').on('click', '.delete-msg-dropdown a', function() {
-  //   $(this).closest('.delete-msg').remove();
-  // })
-  // //hide delete-msg-dropdown on mouseleave
-  // $('.chat-container').on('mouseleave', '.delete-msg-dropdown', function () {
-  //   $(this).hide();
-  // })  
+ 
   //delete chat msg con event Delegation su chat-panel
   //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
   document.querySelector('.chat-container').addEventListener('click', function (e) { 
@@ -241,14 +163,8 @@ $(document).ready(function () {
       deleteMsgMenu.querySelector('.delete-msg-dropdown').classList.toggle('active');
     }
   })
-  //remove entire current msg on click delete-msg link
-  // document.querySelector('.chat-container').addEventListener('click', function (e) {
-  //   var deleteMsg = e.target.closest('.delete-msg-dropdown a');
-  //   if (deleteMsg !== null) {
-  //     deleteMsg.closest('.delete-msg').style.display = 'none';
-  //   }
-  // })
-
+  //delete chat msg con event Delegation su chat-panel
+  //hide-show delete-msg-dropdown when click arrow-down(delete-msg-menu)
   document.querySelector('.chat-container').addEventListener('click', function (e) {
     if (e.target.matches('.delete-msg-menu')) {
       deleteMsgMenu.querySelector('.delete-msg-dropdown').classList.toggle('active');
@@ -260,16 +176,6 @@ $(document).ready(function () {
       e.target.closest('.delete-msg').remove();
     }
   })
-
-  // document.querySelector('.chat-container').addEventListener('mouseover', function (e) { //es. didattico, si poteva fare con semplice hover css
-  //   console.log(e.target);
-  //   var curMsgCont = e.target.closest('.msg-container');
-  //   if (curMsgCont !== null) {
-  //     console.log('match');
-  //     e.target.querySelector('.delete-msg-menu').classList.toggle('active');
-  //   }
-  // })
-
 
   //Bonus: chat-menu left add Contact
   $('.new-chat-addContact').click(function () {
@@ -289,21 +195,6 @@ $(document).ready(function () {
     
   })
 
-  // document.querySelector('.chat-msg').onkeypress = function (e) {
-  //   if (e.keyCode === 13) {
-  //     //sendMsg();
-  //     //receivedMsg();
-  //     sendHandleMsg();
-  //     receiveHandleMsg();
 
-  //   }
-  // };
-
-  // $('input').keyup(function (e) {
-  //   if (e.which === 13) {
-  //     sendMsg();
-  //     receivedMsg();
-  //   }
-  // });
 });
 
