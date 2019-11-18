@@ -155,7 +155,7 @@ $(document).ready(function () {
   //delete chat msg con event Delegation su chat-panel
   //hide-show arrow-down(delete-msg-menu) when mousenter/leave msg-container + fix del-msg-dropdown
   $('.chat-container')
-      .on('mouseenter', '.msg-container', function() {
+      .on('mouseenter', '.msg-container', function() {  //si poteva fare semplice hover css
         $(this).find('.delete-msg-menu').toggle();
       })
       .on('mouseleave', '.msg-container', function () {
